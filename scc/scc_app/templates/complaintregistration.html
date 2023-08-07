@@ -1,0 +1,397 @@
+<script src="https://cdn01.jotfor.ms/static/prototype.forms.js?3.3.39348" type="text/javascript"></script>
+<script src="https://cdn02.jotfor.ms/static/jotform.forms.js?3.3.39348" type="text/javascript"></script>
+<script src="https://cdn03.jotfor.ms/js/vendor/jquery-1.8.0.min.js?v=3.3.39348" type="text/javascript"></script>
+<script defer src="https://cdn01.jotfor.ms/js/vendor/maskedinput.min.js?v=3.3.39348" type="text/javascript"></script>
+<script defer src="https://cdn02.jotfor.ms/js/vendor/jquery.maskedinput.min.js?v=3.3.39348"
+  type="text/javascript"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/punycode/1.4.1/punycode.js"></script>
+<script src="https://cdn03.jotfor.ms/js/vendor/imageinfo.js?v=3.3.39348" type="text/javascript"></script>
+<script src="https://cdn01.jotfor.ms/file-uploader/fileuploader.js?v=3.3.39348"></script>
+
+<!-- Bootstrap CSS v5.2.1 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+<script type="text/javascript">	JotForm.newDefaultTheme = true;
+  JotForm.extendsNewTheme = false;
+  JotForm.singleProduct = false;
+  JotForm.newPaymentUIForNewCreatedForms = false;
+  JotForm.newPaymentUI = true;
+
+  JotForm.init(function () {
+    /*INIT-START*/
+    JotForm.setPhoneMaskingValidator('input_20_full', '*** *** ****');
+
+    JotForm.calendarMonths = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    JotForm.calendarDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+    JotForm.calendarOther = { "today": "Today" };
+    var languageOptions = document.querySelectorAll('#langList li');
+    for (var langIndex = 0; langIndex < languageOptions.length; langIndex++) {
+      languageOptions[langIndex].on('click', function (e) { setTimeout(function () { JotForm.setCalendar("5", false, { "days": { "monday": true, "tuesday": true, "wednesday": true, "thursday": true, "friday": true, "saturday": true, "sunday": true }, "future": true, "past": true, "custom": false, "ranges": false, "start": "", "end": "" }); }, 0); });
+    }
+    JotForm.onTranslationsFetch(function () { JotForm.setCalendar("5", false, { "days": { "monday": true, "tuesday": true, "wednesday": true, "thursday": true, "friday": true, "saturday": true, "sunday": true }, "future": true, "past": true, "custom": false, "ranges": false, "start": "", "end": "" }); });
+    if (window.JotForm && JotForm.accessible) $('input_3').setAttribute('tabindex', 0);
+    if (window.JotForm && JotForm.accessible) $('input_4').setAttribute('tabindex', 0);
+    if (window.JotForm && JotForm.accessible) $('input_7').setAttribute('tabindex', 0);
+    setTimeout(function () {
+      JotForm.initMultipleUploads();
+    }, 2);
+    /*INIT-END*/
+  });
+
+  JotForm.prepareCalculationsOnTheFly([null, { "name": "clickTo", "qid": "1", "text": "Smart Civil Complaint", "type": "control_head" }, null, { "name": "area", "qid": "3", "text": "Area:", "type": "control_textbox" }, { "name": "wardNumber", "qid": "4", "text": "Ward Number:", "type": "control_textbox" }, { "name": "dateOf", "qid": "5", "text": "Date of Complaint:", "type": "control_datetime" }, null, { "name": "description", "qid": "7", "text": "Description:", "type": "control_textarea" }, null, null, null, null, null, null, null, null, null, { "description": "", "name": "name", "qid": "17", "text": "Name:", "type": "control_fullname" }, null, { "description": "", "name": "fileUpload", "qid": "19", "subLabel": "", "text": "File Upload:", "type": "control_fileupload" }, { "description": "", "name": "phoneNumber", "qid": "20", "text": "Phone Number:", "type": "control_phone" }, { "description": "", "name": "email", "qid": "21", "subLabel": "example@example.com", "text": "Email:", "type": "control_email" }, null, { "description": "", "name": "typeOf", "qid": "23", "subLabel": "", "text": "Type of Complaint:", "type": "control_dropdown" }, { "name": "submit", "qid": "24", "text": "Submit", "type": "control_button" }]);
+  setTimeout(function () {
+    JotForm.paymentExtrasOnTheFly([null, { "name": "clickTo", "qid": "1", "text": "Smart Civil Complaint", "type": "control_head" }, null, { "name": "area", "qid": "3", "text": "Area:", "type": "control_textbox" }, { "name": "wardNumber", "qid": "4", "text": "Ward Number:", "type": "control_textbox" }, { "name": "dateOf", "qid": "5", "text": "Date of Complaint:", "type": "control_datetime" }, null, { "name": "description", "qid": "7", "text": "Description:", "type": "control_textarea" }, null, null, null, null, null, null, null, null, null, { "description": "", "name": "name", "qid": "17", "text": "Name:", "type": "control_fullname" }, null, { "description": "", "name": "fileUpload", "qid": "19", "subLabel": "", "text": "File Upload:", "type": "control_fileupload" }, { "description": "", "name": "phoneNumber", "qid": "20", "text": "Phone Number:", "type": "control_phone" }, { "description": "", "name": "email", "qid": "21", "subLabel": "example@example.com", "text": "Email:", "type": "control_email" }, null, { "description": "", "name": "typeOf", "qid": "23", "subLabel": "", "text": "Type of Complaint:", "type": "control_dropdown" }, { "name": "submit", "qid": "24", "text": "Submit", "type": "control_button" }]);
+  }, 20); 
+</script>
+<style type="text/css">
+  @media print {
+    .form-section {
+      display: inline !important
+    }
+
+    .form-pagebreak {
+      display: none !important
+    }
+
+    .form-section-closed {
+      height: auto !important
+    }
+
+    .page-section {
+      position: initial !important
+    }
+  }
+</style>
+<link type="text/css" rel="stylesheet"
+  href="https://cdn01.jotfor.ms/themes/CSS/5e6b428acc8c4e222d1beb91.css?v=3.3.39348&themeRevisionID=5f30e2a790832f3e96009402" />
+<link type="text/css" rel="stylesheet" href="https://cdn02.jotfor.ms/css/styles/payment/payment_styles.css?3.3.39348" />
+<link type="text/css" rel="stylesheet"
+  href="https://cdn03.jotfor.ms/css/styles/payment/payment_feature.css?3.3.39348" />
+<style type="text/css" id="form-designer-style">
+  /* Injected CSS Code */
+  /*PREFERENCES STYLE*/
+  .form-all {
+    font-family: Inter, sans-serif;
+  }
+
+  .form-all .qq-upload-button,
+  .form-all .form-submit-button,
+  .form-all .form-submit-reset,
+  .form-all .form-submit-print {
+    font-family: Inter, sans-serif;
+  }
+
+  .form-all .form-pagebreak-back-container,
+  .form-all .form-pagebreak-next-container {
+    font-family: Inter, sans-serif;
+  }
+
+  .form-header-group {
+    font-family: Inter, sans-serif;
+  }
+
+  .form-label {
+    font-family: Inter, sans-serif;
+  }
+
+  .form-label.form-label-auto {
+
+    display: block;
+    float: none;
+    text-align: left;
+    width: 100%;
+
+  }
+
+  .form-line {
+    margin-top: 12px 36px 12px 36px px;
+    margin-bottom: 12px 36px 12px 36px px;
+  }
+
+  .form-all {
+    max-width: 752px;
+    width: 100%;
+  }
+
+  .form-label.form-label-left,
+  .form-label.form-label-right,
+  .form-label.form-label-left.form-label-auto,
+  .form-label.form-label-right.form-label-auto {
+    width: 230px;
+  }
+
+  .form-all {
+    font-size: 16px
+  }
+
+  .form-all .qq-upload-button,
+  .form-all .qq-upload-button,
+  .form-all .form-submit-button,
+  .form-all .form-submit-reset,
+  .form-all .form-submit-print {
+    font-size: 16px
+  }
+
+  .form-all .form-pagebreak-back-container,
+  .form-all .form-pagebreak-next-container {
+    font-size: 16px
+  }
+
+  .supernova .form-all,
+  .form-all {
+    background-color: #fff;
+    border: 1px solid transparent;
+  }
+
+  .form-all {
+    color: #2C3345;
+  }
+
+  .form-header-group .form-header {
+    color: #2C3345;
+  }
+
+  .form-header-group .form-subHeader {
+    color: #2C3345;
+  }
+
+  .form-label-top,
+  .form-label-left,
+  .form-label-right,
+  .form-html,
+  .form-checkbox-item label,
+  .form-radio-item label {
+    color: #2C3345;
+  }
+
+  .form-sub-label {
+    color: #464d5f;
+  }
+
+  .supernova {
+    background-color: #ecedf3;
+  }
+
+  .supernova body {
+    background: transparent;
+  }
+
+  .form-textbox,
+  .form-textarea,
+  .form-dropdown,
+  .form-radio-other-input,
+  .form-checkbox-other-input,
+  .form-captcha input,
+  .form-spinner input {
+    background-color: #fff;
+  }
+
+  .supernova {
+    background-image: none;
+  }
+
+  #stage {
+    background-image: none;
+  }
+
+  .form-all {
+    background-image: none;
+  }
+
+  .ie-8 .form-all:before {
+    display: none;
+  }
+
+  .ie-8 {
+    margin-top: auto;
+    margin-top: initial;
+  }
+
+  /*PREFERENCES STYLE*/
+  /*__INSPECT_SEPERATOR__*/
+  /* Injected CSS Code */
+</style>
+
+<form class="jotform-form" action="add_details" method="post" enctype="multipart/form-data" name="form_230464146031445"
+  id="230464146031445" accept-charset="utf-8" autocomplete="on" onsubmit="return showAlert()"><input type="hidden" name="formID"
+    value="230464146031445" />
+    {% csrf_token %}
+    <input type="hidden" id="JWTContainer" value="" /><input type="hidden"
+    id="cardinalOrderNumber" value="" />
+
+  <div role="main" class="form-all">
+    <style>
+      .form-all:before {
+        background: none;
+      }
+    </style>
+    <ul class="form-section page-section">
+      <li id="cid_1" class="form-input-wide" data-type="control_head">
+        <div class="form-header-group  header-large">
+          <div class="header-text httal htvam">
+            <h1 id="header_1" class="form-header" data-component="header">Smart Civil Complaint</h1>
+            <div id="subHeader_1" class="form-subHeader">Register Your Complaint Here</div>
+          </div>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_fullname" id="id_17">
+        <label
+          class="form-label form-label-top form-label-auto" id="label_17" for="first_17"> Name:<span style="color:red">*</span> </label>
+        <div id="cid_17" class="form-input-wide" data-layout="full">
+          <div data-wrapper-react="true"><span class="form-sub-label-container" style="vertical-align:top">
+               <input type="text" id="fnameid" name="fname" class="form-textbox" value="" required pattern="[a-zA-Z]+" title="Enter only characters" />
+                <label class="form-sub-label" for="fnameid" id="sublabel_17_first" style="min-height:13px" >First Name</label></span>
+                <span class="form-sub-label-container" style="vertical-align:top">
+                <input type="text" id="lnameid" name="lname" class="form-textbox"/>
+                <label class="form-sub-label" for="last_17" id="sublabel_17_last" style="min-height:13px">Last Name</label></span>
+          </div>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_phone" id="id_20"><label
+          class="form-label form-label-top form-label-auto" > Phone Number:<span style="color:red">*</span> </label>
+        <div id="cid_20" class="form-input-wide" data-layout="half"> <span class="form-sub-label-container"
+            style="vertical-align:top">
+            <input type="tel" id="phonenumberid" name="phonenumber"
+              data-type="mask-number" class="mask-phone-number form-textbox validate[Fill Mask]" data-defaultvalue=""
+              autoComplete="section-input_20 on" style="width:310px" data-masked="true" value=""
+              placeholder="*** *** ****" data-component="phone" aria-labelledby="label_20 sublabel_20_masked" required /><label
+              class="form-sub-label" for="phonenumberid" id="sublabel_20_masked" style="min-height:13px"
+              aria-hidden="false">Please enter a valid phone number.</label></span> </div>
+      </li>
+      
+      <li class="form-line" data-type="control_dropdown" id="id_23"><label
+          class="form-label form-label-top form-label-auto" id="label_23" for="input_23"> Type of Complaint:<span style="color:red">*</span> </label>
+        <div id="cid_23" class="form-input-wide" data-layout="half"> <select class="form-dropdown" id="typeofid"
+            name="typeOfComplaint" style="width:310px" data-component="dropdown" aria-label="Type of Complaint:">
+            <option value="">Please Select</option>
+            <option value="Electricity">Electricity</option>
+            <option value="Garbage Collection">Garbage Collection</option>
+            <option value="Water Board">Water Board</option>
+            <option value="Others">Others</option>
+          </select> </div> 
+      </li>
+      
+      <li class="form-line" data-type="control_textbox" id="id_3"><label
+          class="form-label form-label-top form-label-auto" id="label_3" for="input_3"> Area:<span style="color:red">*</span> </label>
+        <div id="cid_3" class="form-input-wide" data-layout="half"> <input type="text" id="areaid" name="area"
+            data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:310px" size="310" value=""
+            placeholder=" " data-component="textbox" aria-labelledby="label_3" /> </div>
+      </li>
+      <li class="form-line" data-type="control_textbox" id="id_4"><label
+          class="form-label form-label-top form-label-auto" id="label_4" for="input_4"> Ward Number: <span style="color:red">*</span> </label>
+        <div id="cid_4" class="form-input-wide" data-layout="half"> <input type="text" id="wardid" name="wardNumber"
+            data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:310px" size="310" value=""
+            placeholder=" " data-component="textbox" aria-labelledby="label_4" /> </div>
+      </li>
+      <li class="form-line" data-type="control_textarea" id="id_7"><label
+          class="form-label form-label-top form-label-auto" id="label_7" for="input_7"> Description:<span style="color:red">*</span> </label>
+        <div id="cid_7" class="form-input-wide" data-layout="full"> <textarea id="descriptionid" class="form-textarea"
+            name="description" style="width:648px;height:163px" data-component="textarea"
+            aria-labelledby="label_7"></textarea> </div>
+      </li>
+      <li class="form-line" data-type="control_fileupload" id="id_19"><label
+          class="form-label form-label-top form-label-auto" id="label_19" for="input_19"> File Upload: </label>
+        <div id="cid_19" class="form-input-wide" data-layout="full">
+          <div class="jfQuestion-fields" data-wrapper-react="true">
+            <div class="jfField isFilled">
+              <div class="jfUpload-wrapper">
+                <div class="jfUpload-container">
+                 
+                  <div class="jfUpload-button-container">
+                    <div class="jfUpload-button" aria-hidden="true" tabindex="0" style="display:none" data-version="v2">
+                      Browse Files<div class="jfUpload-heading forDesktop">Drag and drop files here</div>
+                      <div class="jfUpload-heading forMobile">Choose a file</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="jfUpload-files-container">
+                  <div class=""><input type="file" id="input_19" name="file"
+                      multiple="" class="" data-imagevalidate="yes"
+                      data-file-accept="pdf, doc, docx, xls, xlsx, csv, txt, rtf, html, zip, mp3, wma, mpg, flv, avi, jpg, jpeg, png, gif"
+                      data-file-maxsize="10854" data-file-minsize="0" data-file-limit="" data-component="fileupload"
+                      aria-label="Browse Files" /></div>
+                </div>
+              </div>
+              <div data-wrapper-react="true"></div>
+            </div><span style="display:none" class="cancelText">Cancel</span><span style="display:none"
+              class="ofText">of</span>
+          </div>
+        </div>
+      </li>
+      <li class="form-line" data-type="control_button" id="id_24">
+        <div id="cid_24" class="form-input-wide" data-layout="full">
+          <div data-align="auto" class="form-buttons-wrapper form-buttons-auto  ">
+            <input name="submit" id="" class="btn btn-primary" type="submit" value="Submit" role="button">
+          </div>
+        </div>
+      </li>
+      <li style="display:none">Should be Empty: <input type="text" name="website" value="" /></li>
+    </ul>
+  </div>
+  <script>
+    JotForm.showJotFormPowered = "new_footer";
+  </script>
+  <script>
+    JotForm.poweredByText = "Powered by Jotform";
+  </script><input type="hidden" class="simple_spc" id="simple_spc" name="simple_spc" value="230464146031445" />
+  <script type="text/javascript">
+    var all_spc = document.querySelectorAll("form[id='230464146031445'] .si" + "mple" + "_spc");
+    for (var i = 0; i < all_spc.length; i++) {
+      all_spc[i].value = "230464146031445-230464146031445";
+    }
+    
+    function showAlert() {
+       var regName = /^[a-zA-Z]+/;
+       var regDesc = /^[a-zA-Z\ s]+/;
+        let fname = document.getElementById('fnameid').value;
+        let lname = document.getElementById('lnameid').value;
+        let phonenumber = document.getElementById('phonenumberid').value;
+        let typeofcomplaint = document.getElementById('typeofid').value;
+        let area = document.getElementById('areaid').value;
+        let ward = document.getElementById('wardid').value;
+        let description = document.getElementById('descriptionid').value;
+-
+        if(fname == "" || !regName.test(fname)){
+          alert("Enter details properly");
+          document.getElementById('fnameid').focus();
+          return false;
+        }
+        if(lname == "" || !regName.test(lname)){
+          alert("Enter details properly");
+          document.getElementById('lnameid').focus();
+          return false;
+        }
+        if(phonenumber == "" || !phonenumber.match('[0-9]{10}')){
+          alert("Enter phone number properly");
+          document.getElementById('phonenumberid').focus();
+          return false;
+        }
+        if(typeofcomplaint == ""){
+          alert("Please select complaint type");
+          return false;
+        }
+        if(area == "" || !regName.test(area)){
+          alert("Enter area details properly");
+          document.getElementById('areaid').focus();
+          return false;
+        }
+        if(ward == "" || !phonenumber.match('[0-9]{2}')){
+          alert("Enter ward number properly");
+          document.getElementById('wardid').focus();
+          return false;
+        }
+        if(description == "" || !regDesc.test(description)){
+          alert("Enter area details properly");
+          document.getElementById('descriptionid').focus();
+          return false;
+        }
+
+        
+    }
+  </script>
+
+</form>
+<script type="text/javascript">JotForm.ownerView = true;</script>
+<script src="https://cdn.jotfor.ms//js/vendor/smoothscroll.min.js?v=3.3.39348"></script>
+<script src="https://cdn.jotfor.ms//js/errorNavigation.js?v=3.3.39348"></script>

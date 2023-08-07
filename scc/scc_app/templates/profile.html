@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>My Profile</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <header>
+    <!-- place navbar here -->
+  </header>
+  <main>
+    <section style="background-color: #eee;">
+        <div class="container py-5">
+          <div class="row">
+            <div class="col">
+              <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
+                <ol class="breadcrumb mb-0">
+                  <li class="breadcrumb-item"><a href="../../login/home">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="card mb-4">
+                <div class="card-body text-center">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+                    class="rounded-circle img-fluid" style="width: 150px;">
+                  <h5 class="my-3">{{mymembers.name}}</h5>
+                  <p class="text-muted mb-1">{{mymembers.email}}</p>
+                  <p class="text-muted mb-4">{{mymembers.address}}</p>
+                  <div class="d-flex justify-content-center mb-2">
+                    <button type="button" class="btn btn-primary">Follow</button>
+                    <button type="button" class="btn btn-outline-primary ms-1">Message</button>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            <div class="col-lg-8">
+              <div class="card mb-4">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="mb-0">Full Name</p>
+                    </div>
+                    <div class="col-sm-9">
+                      <p class="text-muted mb-0">{{mymembers.name}}</p>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="mb-0">Unique Id</p>
+                    </div>
+                    <div class="col-sm-9">
+                      <p class="text-muted mb-0">{{mymembers.unique_id}}</p>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="mb-0">Email</p>
+                    </div>
+                    <div class="col-sm-9">
+                      <p class="text-muted mb-0">{{mymembers.email}}</p>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="mb-0">Phone</p>
+                    </div>
+                    <div class="col-sm-9">
+                      <p class="text-muted mb-0">{{mymembers.phonenumber}}</p>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="mb-0">Pincode</p>
+                    </div>
+                    <div class="col-sm-9">
+                      <p class="text-muted mb-0">{{mymembers.pincode}}</p>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="mb-0">Address</p>
+                    </div>
+                    <div class="col-sm-9">
+                      <p class="text-muted mb-0">{{mymembers.address}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+               
+              </div>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col">
+              <div class="card mb-4">
+                <div class="card-body">
+                  <h5 class="card-title">My Complaints</h5>
+                    <div class="table-responsive m-0">
+                      <table class="table table-striped table-hover	table-borderless align-middle mt-2">
+                        <thead class="">
+                          <tr>
+                            <th>Sl NO</th>
+                            <!-- <th>Full Name</th> -->
+                            <!-- <th>Phone Number</th> -->
+                            <!-- <th>Email</th> -->
+                            <th>Complaint Type</th>
+                            <th>Area</th>
+                            <th>Ward Number</th>
+                            <th>Description</th>
+                            <th>Document</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                          </tr>
+                          </thead>
+                          <tbody class="table-group-divider">
+                            {% for mycomplaint in mycomplaints %}
+                            <tr class="" >
+                              <td>{{forloop.counter}}</td>
+                              <!-- <td scope="row">{{mycomplaint.fname}} {{mycomplaint.lname}}</td> -->
+                              <!-- <td>{{mycomplaint.phonenumber}}</td> -->
+                              <!-- <td>{{mycomplaint.email}}</td> -->
+                              <td>{{mycomplaint.complaint_type}}</td>
+                              <td>{{mycomplaint.area}}</td>
+                              <td>{{mycomplaint.ward_no}}</td>
+                              <td>{{mycomplaint.desc}}</td>
+                              <td><a name="document" id="" class="text-muted" href="{{ MEDIA_URL }}{{mycomplaint.file_upload}}" role="button">View document</a></td>
+                              {% if mycomplaint.complaint_status == "pending" %}
+                              <td><span class="badge rounded-pill text-bg-danger">Pending</span></td>
+                              {% else %}
+                              <td><span class="badge rounded-pill text-bg-success">Completed</span></td>
+                              {% endif %}
+                              <td><a name="" id="" class="btn btn-sm btn-danger" href="profile/delete/{{ mycomplaint.unique_id }}" role="button">Delete</a></td>
+                            </tr>
+                            {% endfor %}
+                          </tbody>
+                      </table>
+                    </div>
+                </div>              
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+  </main>
+  <footer>
+    <!-- place footer here -->
+  </footer>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+</body>
+</html>

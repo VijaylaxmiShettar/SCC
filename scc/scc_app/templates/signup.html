@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>sign up</title>
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- Font-->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/nunito-font.css' %}">
+	<!-- Main Style Css -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+</head>
+<body class="form-v6">
+	<div class="page-content">
+		<div class="form-v6-content">
+			
+			
+			<form class="form-detail" action="user_registration" method="post">{% csrf_token %}
+				<h2>Signup Form</h2>
+				<div class="form-row" style="margin-bottom: 20px;">
+					<input type="text" name="full_name" id="full_name" class="input-text" placeholder="Your Name" required style="margin-bottom:5px;">
+					<span style="color:darkgrey; font-size: 12px; margin-left: 15px;">Enter your name </span>
+
+				</div>
+				<div class="form-row" style="margin-bottom: 20px;">
+					<input type="text" name="unique_name" id="unique_name" class="input-text" placeholder="Create Unique ID" required style="margin-bottom: 3px;">
+					<span style="color:darkgrey; font-size: 12px; margin-left: 15px;">Remember this ID for future reference </span>
+				</div>
+				<div class="form-row" style="margin-bottom: 20px;">
+					<input type="text" name="your_email" id="your_email" class="input-text" placeholder="Email Address" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" style="margin-bottom:5px">
+					<span style="color:darkgrey; font-size: 12px; margin-left: 15px;">Enter your email-id</span>
+				</div>
+				<div class="form-row" style="margin-bottom: 20px;">
+					<input type="text" name="phonenumber" id="phonenumberid" class="input-text" placeholder="Enter Phone Number" required style="margin-bottom:5px">
+					<span style="color:darkgrey; font-size: 12px; margin-left: 15px;">Enter 10 digits only</span>
+				</div>
+				<div class="form-row" style="margin-bottom: 20px;">
+					<input type="text" name="address" id="addressid" class="input-text" placeholder="Enter Address" required style="margin-bottom:5px">
+					<span style="color:darkgrey; font-size: 12px; margin-left: 15px;">Enter your address</span>
+				</div>
+				<div class="form-row" style="margin-bottom: 20px;">
+					<input type="text" name="pincode" id="pincodeid" class="input-text" placeholder="Enter Pincode" required style="margin-bottom:5px">
+					<span style="color:darkgrey; font-size: 12px; margin-left: 15px;">Enter your pincode</span>
+				</div>
+				<div class="form-row" style="margin-bottom: 20px;">
+					<input type="password" name="password" id="password" class="input-text" placeholder="Password" required style="margin-bottom:5px">
+				</div>
+				<div class="form-row">
+					<input type="password" name="comfirm_password" id="comfirm_password" class="input-text" placeholder="Comfirm Password" required>
+				</div>
+				<div class="form-row-last">
+					<input type="submit" name="register" class="register" value="Register">
+				</div>
+			</form>
+		</div>
+	</div>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
